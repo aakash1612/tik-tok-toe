@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -10,9 +11,11 @@ const PORT  = 5000; //added later
 app.use(cors())
 app.use(express.json()); // ⬅️ To parse JSON body
 app.use('/api/auth' , authRoutes); // added later
-mongoose.connect('mongodb://localhost:27017/tictactoe-auth').then(()=>{
-     console.log('MongoDb Connected');
-   }).catch(err => console.error(err));
+mongoose.connect('mongodb://localhost:27017/tictactoe-auth')
+  .then(() => {
+    console.log('✅ MongoDB Connected');
+  })
+  .catch(err => console.error('❌ MongoDB Error:', err));
 
    
 const server = http.createServer(app)
