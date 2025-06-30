@@ -1,9 +1,11 @@
 // src/pages/Login.js
+import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Login = ({ onAuth }) => {
+  const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
