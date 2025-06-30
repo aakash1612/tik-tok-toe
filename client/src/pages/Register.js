@@ -24,15 +24,28 @@ function Register({ onAuth }) {
   };
 
   return (
-    <div className="auth-form">
+    <div>
       <h2>Register</h2>
       <form onSubmit={handleRegister}>
-        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" required />
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
+        <input
+          type="email"
+          value={email}
+          placeholder="Email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <br />
+        <input
+          type="password"
+          value={password}
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <br />
         <button type="submit">Register</button>
-        {error && <p className="error">{error}</p>}
-        <p>Already have an account? <Link to="/login">Login</Link></p>
       </form>
+      <p>
+        Already have an account? <Link to="/login">Login here</Link>
+      </p>
     </div>
   );
 }
