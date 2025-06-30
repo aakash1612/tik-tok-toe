@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+  font-family: Arial;
+  margin-top: 40px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 5px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: #f0f0f0;
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px solid #ccc;
+}
+
+.cell:hover {
+  background: #e0e0e0;
+}
