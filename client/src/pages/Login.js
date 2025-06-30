@@ -20,26 +20,29 @@ const Login = ({ onAuth }) => {
     }
   };
 
-  return (
-    <div className="auth-container">
-      <h2>🔑 Login</h2>
+ return (
+    <div>
+      <h2>Login</h2>
       <form onSubmit={handleLogin}>
         <input
-          type="text"
-          placeholder="Username"
-          required
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          type="email"
+          value={email}
+          placeholder="Email"
+          onChange={(e) => setEmail(e.target.value)}
         />
+        <br />
         <input
           type="password"
-          placeholder="Password"
-          required
           value={password}
+          placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         />
+        <br />
         <button type="submit">Login</button>
       </form>
+      <p>
+        Don’t have an account? <Link to="/register">Register here</Link>
+      </p>
     </div>
   );
 };
