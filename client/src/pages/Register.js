@@ -15,8 +15,8 @@ function Register({ onAuth }) {
         username,
         password
       });
-      onAuth(); // ✅ Set login state
-      navigate('/'); // ✅ Go to game
+      onAuth(); // Set login state true
+      navigate('/'); // Go to game page
     } catch (err) {
       const msg = err.response?.data?.message || 'Registration failed';
       setError(msg);
@@ -26,12 +26,14 @@ function Register({ onAuth }) {
   return (
     <div>
       <h2>Register</h2>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
       <form onSubmit={handleRegister}>
         <input
-          type="email"
-          value={email}
-          placeholder="Email"
-          onChange={(e) => setEmail(e.target.value)}
+          type="text"
+          value={username}
+          placeholder="Username"
+          onChange={(e) => setUsername(e.target.value)}
+          required
         />
         <br />
         <input
@@ -39,6 +41,7 @@ function Register({ onAuth }) {
           value={password}
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
+          required
         />
         <br />
         <button type="submit">Register</button>
@@ -51,3 +54,4 @@ function Register({ onAuth }) {
 }
 
 export default Register;
+
