@@ -11,7 +11,7 @@ function Register({ onAuth }) {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/api/auth/register', {
+      await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/register`, {
         username,
         password
       });
