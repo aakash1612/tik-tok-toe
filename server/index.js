@@ -8,7 +8,10 @@ const {Server} = require('socket.io')
 
 const app = express();
 const PORT = process.env.PORT || 5000; //added later
-app.use(cors());
+app.use(cors({
+  origin: 'https://gamingakku.netlify.app',
+  credentials: true
+}));
 app.use(express.json()); // ⬅️ To parse JSON body
 app.use('/api/auth' , authRoutes); // added later
 mongoose.connect(process.env.MONGODB_URI, {
