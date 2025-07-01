@@ -6,7 +6,7 @@ import './App.css';
 import Register from './pages/Register';
 import Login from './pages/Login';
 
-const socket = io('http://localhost:5000');
+const socket = io('https://tik-tok-toe-backend.onrender.com');
 
 function Game() {
   const [board, setBoard] = useState(Array(9).fill(null));
