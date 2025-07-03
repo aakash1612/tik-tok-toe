@@ -9,7 +9,7 @@ const {Server} = require('socket.io')
 const app = express();
 const PORT = process.env.PORT || 5000; //added later
 app.use(cors({
-  origin: 'https://gamingakku.netlify.app',
+  origin: '*',
   credentials: true
 }));
 app.use(express.json()); // ⬅️ To parse JSON body
