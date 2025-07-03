@@ -14,7 +14,7 @@ app.use(cors({
 }));
 app.use(express.json()); // ⬅️ To parse JSON body
 app.use('/api/auth' , authRoutes); // added later
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
