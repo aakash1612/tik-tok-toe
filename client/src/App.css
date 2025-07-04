@@ -1,29 +1,86 @@
+/* App.css */
+
+/* General Page Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #74ebd5, #ACB6E5);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container for Forms and Game */
+.container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  width: 320px;
+  text-align: center;
+}
+
+/* Inputs */
+input {
+  width: 90%;
+  padding: 0.6rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Error Text */
+p.error {
+  color: red;
+  font-size: 0.9rem;
+}
+
+/* Game Board Styling */
 .App {
   text-align: center;
-  font-family: Arial;
-  margin-top: 40px;
 }
 
 .board {
   display: grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-gap: 5px;
+  grid-template-columns: repeat(3, 80px);
+  grid-gap: 10px;
   justify-content: center;
-  margin: 20px auto;
+  margin-top: 20px;
 }
 
 .cell {
-  width: 100px;
-  height: 100px;
-  background: #f0f0f0;
-  font-size: 2em;
+  width: 80px;
+  height: 80px;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  font-size: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  border: 2px solid #ccc;
+  user-select: none;
 }
 
 .cell:hover {
-  background: #e0e0e0;
+  background-color: #f1f1f1;
 }

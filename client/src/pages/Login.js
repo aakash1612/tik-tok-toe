@@ -26,7 +26,7 @@ const Login = ({ onAuth }) => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
         <input
