@@ -16,7 +16,8 @@ function Register({ onAuth }) {
         password
       });
       onAuth(); // Set login state true
-      navigate('/'); // Go to game page
+      navigate('/lobby');
+ // Go to game page
     } catch (err) {
       const msg = err.response?.data?.message || 'Registration failed';
       setError(msg);

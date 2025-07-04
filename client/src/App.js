@@ -1,10 +1,12 @@
-// App.js (Updated with login/register routing)
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import io from 'socket.io-client';
 import './App.css';
 import Register from './pages/Register';
 import Login from './pages/Login';
+
+// ✅ Import the new Lobby page
+import Lobby from './pages/Lobby';
 
 const socket = io('https://tik-tok-toe-backend.onrender.com');
 
@@ -43,7 +45,6 @@ function Game() {
 
   React.useEffect(() => {
     if (!symbol) return;
-
     setTurn('X'); // X starts first
 
     socket.on('move-made', ({ board }) => {
@@ -81,7 +82,9 @@ function App() {
       <Routes>
         <Route path="/register" element={<Register onAuth={handleAuth} />} />
         <Route path="/login" element={<Login onAuth={handleAuth} />} />
-        <Route path="/" element={isAuthenticated ? <Game /> : <Navigate to="/login" />} />
+        <Route path="/lobby" element={isAuthenticated ? <Lobby /> : <Navigate to="/login" />} />
+        <Route path="/game" element={isAuthenticated ? <Game /> : <Navigate to="/login" />} />
+        <Route path="/" element={<Navigate to={isAuthenticated ? "/lobby" : "/login"} />} />
       </Routes>
     </Router>
   );

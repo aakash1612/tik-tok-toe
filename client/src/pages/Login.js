@@ -18,7 +18,8 @@ const Login = ({ onAuth }) => {
 
       localStorage.setItem('token', res.data.token); // Store JWT
       onAuth(); // Notify app that you're logged in
-      navigate('/'); // Redirect to game
+      navigate('/lobby');
+ // Redirect to game
     } catch (err) {
       alert(err.response?.data?.message || 'Login failed');
     }
