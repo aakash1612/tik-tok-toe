@@ -13,7 +13,7 @@ function Register({ onAuth }) {
     try {
       await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/register`, {
         username,
-        password
+        password,
       });
       onAuth(); // Set login state true
       navigate('/lobby');

@@ -30,12 +30,6 @@ router.post('/register', async (req, res) => {
     await newUser.save();
     console.log("✅ New user saved");
 
-    // Optional: Send back token after registration
-    // const token = jwt.sign({ id: newUser._id }, JWT_SECRET, { expiresIn: '1h' });
-    // res.status(201).json({ message: 'User is created', token });
-
-    res.status(201).json({ message: 'User is created' });
-
   } catch (error) {
     console.error("❌ Error in register:", error);
     res.status(500).json({ message: 'Internal error has occured' });
